@@ -71,6 +71,18 @@
     C. "cina" is printed.
 
     **D**. "indonesia" is printed.
+    
+5. The code below will generate?
+
+   ![](https://mahabib.files.wordpress.com/2014/09/c552e-2-1.png?w=665)
+   
+   **A**. Primes
+
+   B. Integers
+
+   C. Odd numbers
+
+   D. Even number
 
 6. What does the following code print to the console?
     ```go
@@ -269,6 +281,7 @@
     **C**. [1 1]
 
     D. [0 0]
+    
 
 17. What does the following code print?
     ```go
