@@ -622,6 +622,103 @@ B. 5
 D. Compilation error
 
 
+5. A person wants to determine the most expensive computer keyboard and USB drive that can be purchased with a give budget. Given price lists for keyboards and USB drives and a budget, find the cost to buy them. If it is not possible to buy both items, return 
+  - **Example**
+    - _b_ = 60
+    - _keyboards_ = [40, 50, 60]
+    - _drives_ = [5, 8, 12]
+
+    The person can buy a **40 keyboard + 12 USB Drive = 52** or a **50 keyboard + 8 USB Drive**. Choose the latter as the more expensive option and return **58**
+
+  - **Function Description**
+     Complete the getMoneySpent function in the editor below.
+     getMoneySpent has the following parameter(s):
+     - int keyboards[n]: the keyboard prices
+     - int drives[m]: the drive prices
+     - int b: the budget
+
+  - Choose the golang solution below to solve the above problem
+ 
+A.
+```go
+  keyboards []int32{40, 50, 60}
+  drives []int32{5, 8, 12} 
+  b := 60
+  max := int32(-1)
+  for i := int32(0); i < int32(len(keyboards)); i++ {
+     for j := int32(0); j < int32(len(drives)); j++ {
+         sum := keyboards[i] + drives[j]
+         if sum > max && sum <= b {
+             max = sum
+	     fmt.Println("more expensive option is ", max)
+         } else if sum < max && sum >= b {
+	 if max == b {
+             fmt.Println("more expensive option is ", max) 
+         }
+     }
+  }
+  // Expected Output: 58
+```
+ 
+**B**.
+```go
+  keyboards []int32{40, 50, 60}
+  drives []int32{5, 8, 12} 
+  b := 60
+  max := int32(-1)
+  for i := int32(0); i < int32(len(keyboards)); i++ {
+     for j := int32(0); j < int32(len(drives)); j++ {
+         sum := keyboards[i] + drives[j]
+         if sum > max && sum <= b {
+             max = sum
+             if max == b {
+                 fmt.Println("more expensive option is ", max) 
+             }
+         }
+     }
+  }
+  
+  // Expected Output: 58
+```
+
+C.
+```go
+  keyboards []int32{40, 50, 60}
+  drives []int32{5, 8, 12} 
+  b := 60
+  max := int32(-1)
+  for i := int32(0); i < int32(len(keyboards)); i++ {
+     for j := int32(0); j < int32(len(drives)); j++ {
+         sum := keyboards[i] + drives[j]
+         if sum < max && sum >= b {
+             sum = max 
+             if max == b {
+                 fmt.Println("more expensive option is ", max) 
+             }
+         }
+     }
+  }
+  
+  // Expected Output: 58
+```
+
+D.
+```go
+  keyboards []int32{40, 50, 60}
+  drives []int32{5, 8, 12} 
+  b := 60
+  max := int32(-1)
+  for i := int32(0); i < int32(len(keyboards)); i++ {
+     for j := int32(0); j < int32(len(drives)); j++ {
+         fmt.Println("more expensive option is ", max) 
+     }
+  }
+  
+  // Expected Output: 58
+```
+
+
+
 6. What does the following code print?
 ```go
 type rect struct {  
